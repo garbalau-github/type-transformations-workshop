@@ -14,11 +14,11 @@ export type Event =
       event: KeyboardEvent;
     };
 
-type NonKeyDownEvents = unknown;
+type NonKeyDownEvents = Exclude<Event, {type: 'keydown'}>;
 
 type tests = [
   Expect<
-    Equal<
+    Equal< 
       NonKeyDownEvents,
       | { type: "click"; event: MouseEvent }
       | { type: "focus"; event: FocusEvent }

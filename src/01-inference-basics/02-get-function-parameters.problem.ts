@@ -1,8 +1,6 @@
 import { Equal, Expect } from "../helpers/type-utils";
 
-const makeQuery = (
-  url: string,
-  opts?: {
+const makeQuery = (url: string, opts?: {
     method?: string;
     headers?: {
       [key: string]: string;
@@ -11,7 +9,7 @@ const makeQuery = (
   },
 ) => {};
 
-type MakeQueryParameters = unknown;
+type MakeQueryParameters = Parameters<typeof makeQuery>;
 
 type tests = [
   Expect<
